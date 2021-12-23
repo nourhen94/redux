@@ -1,4 +1,4 @@
-import { ADD, COMPLETE, DELETE, EDIT } from "./ActionTypes";
+import { ADD, COMPLETE, DELETE, EDIT, FILTER } from "./ActionTypes";
 
 const init = {
   todos: [
@@ -29,6 +29,13 @@ const reducer = (state = init, { type, payload }) => {
           ...state.todos.map((el) => (el.id === payload.id ? payload : el)),
         ],
       };
+
+    case FILTER:
+      return {
+        ...state,
+        filter: !state.filter,
+      };
+
     default:
       return state;
   }

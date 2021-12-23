@@ -1,4 +1,4 @@
-import { ADD, COMPLETE, DELETE, EDIT } from "./ActionTypes";
+import { ADD, COMPLETE, DELETE, EDIT, FILTER } from "./ActionTypes";
 
 export const del = (id) => {
   return {
@@ -25,5 +25,11 @@ export const edit = (editTask) => {
   return {
     type: EDIT,
     payload: editTask,
+  };
+};
+
+export const filterTask = () => {
+  return {
+    type: FILTER,
   };
 };

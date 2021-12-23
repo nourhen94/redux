@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { add } from '../redux/Action'
+import { add, filterTask } from '../redux/Action'
 
 const Addtask = () => {
   const [text , setText ] = useState('')
@@ -28,7 +28,7 @@ return (
             <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
             <button>Add</button>
             </form>
-        
+        <button onClick={()=>dispatch(filterTask())}>filter</button>
             <p>Total Tasks {todos.length} </p>
             <p>completed Tasks {todos.filter(el=>el.isDone).length} </p>
         </div>
